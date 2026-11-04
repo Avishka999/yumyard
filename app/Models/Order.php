@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
 {
+    // Order totals, delivery data, and workflow status are mass assignable.
     protected $fillable = [
         'user_id',
         'subtotal',
@@ -19,6 +20,7 @@ class Order extends Model
         'phone',
     ];
 
+    // Keep monetary values consistent when serialized.
     protected function casts(): array
     {
         return [
@@ -28,11 +30,13 @@ class Order extends Model
         ];
     }
 
+    // Link the order to the customer who placed it.
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    // An order contains one or more purchased food lines.
     public function items(): HasMany
     {
         return $this->hasMany(OrderItem::class);

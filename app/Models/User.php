@@ -19,6 +19,7 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasApiTokens, HasFactory, Notifiable;
 
+    // A customer can have many orders.
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class);

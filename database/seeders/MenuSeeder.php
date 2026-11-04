@@ -10,12 +10,14 @@ class MenuSeeder extends Seeder
 {
     public function run(): void
     {
+        // Define the customer-facing menu groups.
         $categories = [
             'Burgers' => 'Handcrafted burgers made with fresh ingredients.',
             'Drinks' => 'Refreshing drinks and creamy favourites.',
             'Salads' => 'Fresh, colourful salads for a lighter meal.',
         ];
 
+        // Create or refresh categories without duplicating existing records.
         foreach ($categories as $name => $description) {
             Category::updateOrCreate(
                 ['name' => $name],
@@ -23,9 +25,11 @@ class MenuSeeder extends Seeder
             );
         }
 
+        // Resolve category IDs before assigning each food item.
         $categoryIds = Category::whereIn('name', array_keys($categories))
             ->pluck('id', 'name');
 
+        // Keep menu content and its public image paths in one repeatable seed.
         $foods = [
             [
                 'category_id' => $categoryIds['Burgers'],
@@ -113,6 +117,7 @@ class MenuSeeder extends Seeder
             ],
         ];
 
+        // Upsert by name so the seeder can safely run more than once.
         foreach ($foods as $food) {
             Food::updateOrCreate(
                 ['name' => $food['name']],

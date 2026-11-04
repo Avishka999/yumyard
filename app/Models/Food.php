@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Food extends Model
 {
+    // The legacy schema uses the plural foods table explicitly.
     protected $table = 'foods';
 
+    // Attributes accepted from validated menu requests.
     protected $fillable = [
         'category_id',
         'name',
@@ -18,6 +20,7 @@ class Food extends Model
         'is_available',
     ];
 
+    // Convert database values to the types used by the API and UI.
     protected function casts(): array
     {
         return [
@@ -26,6 +29,7 @@ class Food extends Model
         ];
     }
 
+    // Each food belongs to one menu category.
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

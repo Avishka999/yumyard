@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import useCart from '../hooks/useCart';
 import { createOrder } from '../services/orderService';
 
+// Collect delivery details and submit the cart as an authenticated order.
 function CheckoutPage() {
   const { cart } = useCart();
   const navigate = useNavigate();

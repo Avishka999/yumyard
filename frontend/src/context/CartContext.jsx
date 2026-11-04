@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import CartContext from './CartContextValue';
 import { getStoredCart, storeCart } from '../services/cartService';
 
+// Provide persistent cart operations to customer pages.
 function CartProvider({ children }) {
   const [cart, setCart] = useState(getStoredCart);
 

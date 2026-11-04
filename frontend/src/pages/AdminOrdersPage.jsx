@@ -3,6 +3,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Loading from '../components/common/Loading';
 import { getAdminOrders, updateOrderStatus } from '../services/adminService';
 
+// Let administrators review orders and update their workflow status.
 function AdminOrdersPage() {
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState('');

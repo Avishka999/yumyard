@@ -4,6 +4,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Loading from '../components/common/Loading';
 import { getOrders } from '../services/orderService';
 
+// List orders belonging to the signed-in customer.
 function MyOrdersPage() {
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState('');

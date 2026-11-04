@@ -5,6 +5,7 @@ import Loading from '../components/common/Loading';
 import { getCategories } from '../services/categoryService';
 import { createFood, getFoods } from '../services/foodService';
 
+// Create foods and review the current menu catalog as an administrator.
 function AdminFoodsPage() {
   const [foods, setFoods] = useState([]);
   const [categories, setCategories] = useState([]);

@@ -3,6 +3,7 @@ import FoodImage from '../components/foods/FoodImage';
 import CartSummary from '../components/cart/CartSummary';
 import useCart from '../hooks/useCart';
 
+// Let customers review, adjust, or remove cart items before checkout.
 function CartPage() {
   const { cart, removeFromCart, updateQuantity } = useCart();
 

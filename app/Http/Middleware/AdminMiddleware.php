@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
 {
+    // Block authenticated users who do not have the administrator role.
     public function handle(Request $request, Closure $next): Response
     {
         abort_unless($request->user()?->role === 'admin', 403, 'Administrator access is required.');

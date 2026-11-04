@@ -4,6 +4,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Input from '../components/common/Input';
 import useAuth from '../hooks/useAuth';
 
+// Validate registration fields and create a new customer account.
 function RegisterPage() {
   const { register } = useAuth();
   const navigate = useNavigate();

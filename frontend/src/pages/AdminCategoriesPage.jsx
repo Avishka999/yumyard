@@ -5,6 +5,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Loading from '../components/common/Loading';
 import { createCategory, getCategories } from '../services/categoryService';
 
+// Manage menu categories from the protected admin area.
 function AdminCategoriesPage() {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

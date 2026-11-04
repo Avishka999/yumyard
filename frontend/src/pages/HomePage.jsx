@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// Present the brand promise and route customers into the menu.
 function HomePage() {
   return (
     <main className="home-page">

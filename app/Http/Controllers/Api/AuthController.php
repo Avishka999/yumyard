@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    // Validate a new customer and return a Sanctum token immediately.
     public function register(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -23,6 +24,7 @@ class AuthController extends Controller
         return $this->tokenResponse($user, 201);
     }
 
+    // Authenticate an existing user with email and password.
     public function login(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -39,6 +41,7 @@ class AuthController extends Controller
         return $this->tokenResponse($user);
     }
 
+    // Revoke only the token used by the current session.
     public function logout(Request $request): JsonResponse
     {
         $request->user()->currentAccessToken()?->delete();
@@ -46,6 +49,7 @@ class AuthController extends Controller
         return response()->json(['message' => 'Logged out successfully.']);
     }
 
+    // Keep token response formatting consistent for login and registration.
     private function tokenResponse(User $user, int $status = 200): JsonResponse
     {
         return response()->json([

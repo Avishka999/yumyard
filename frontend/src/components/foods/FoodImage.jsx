@@ -1,3 +1,4 @@
+// Resolve database image paths and provide an accessible fallback.
 function FoodImage({ food, className = '' }) {
   if (!food.image) {
     return (

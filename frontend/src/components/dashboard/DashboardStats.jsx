@@ -1,3 +1,4 @@
+// Render reusable metric cards for administrator statistics.
 function DashboardStats({ statistics }) {
   return (
     <div className="dashboard-stats">

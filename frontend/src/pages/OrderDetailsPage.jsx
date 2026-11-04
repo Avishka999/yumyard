@@ -4,6 +4,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Loading from '../components/common/Loading';
 import { getOrder } from '../services/orderService';
 
+// Display the line items and delivery state for one customer order.
 function OrderDetailsPage() {
   const { orderId } = useParams();
   const [order, setOrder] = useState(null);

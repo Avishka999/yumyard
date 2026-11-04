@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import FoodImage from './FoodImage';
 
+// Render a clickable summary card for one menu item.
 function FoodCard({ food, onSelect }) {
   return (
     <article className="food-card">

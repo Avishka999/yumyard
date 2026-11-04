@@ -8,6 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
+        // Store customer totals and delivery information for each checkout.
         Schema::create('orders', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
@@ -24,6 +25,7 @@ return new class extends Migration
 
     public function down(): void
     {
+        // Remove the order table during rollback.
         Schema::dropIfExists('orders');
     }
 };

@@ -1,3 +1,4 @@
+// Calculate and display the cart subtotal, delivery fee, and total.
 function CartSummary({ items }) {
   const total = items.reduce((sum, item) => sum + Number(item.price || 0) * item.quantity, 0);
 

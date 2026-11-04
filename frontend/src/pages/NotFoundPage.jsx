@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// Provide a safe fallback for unknown URLs.
 function NotFoundPage() {
   return (
     <main className="page-shell not-found-page">

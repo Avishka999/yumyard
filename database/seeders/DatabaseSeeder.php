@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Keep local demo accounts available for testing customer and admin flows.
         User::updateOrCreate(
             ['email' => 'test@example.com'],
             ['name' => 'Test User', 'password' => 'password', 'role' => 'customer'],
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Yum Yard Admin', 'password' => 'password', 'role' => 'admin'],
         );
 
+        // Seed the categories and menu items used by the customer UI.
         $this->call(MenuSeeder::class);
     }
 }

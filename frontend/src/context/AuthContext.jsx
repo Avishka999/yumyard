@@ -2,7 +2,9 @@ import { useMemo, useState } from 'react';
 import AuthContext from './AuthContextValue';
 import { login as loginRequest, logout as logoutRequest, register as registerRequest } from '../services/authService';
 
+// Provide authentication state and actions to the entire React tree.
 function AuthProvider({ children }) {
+  // Restore the last known user for refresh-safe navigation.
   const [user, setUser] = useState(() => {
     const storedUser = localStorage.getItem('yum-yard-user');
     return storedUser ? JSON.parse(storedUser) : null;

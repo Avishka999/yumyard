@@ -1,6 +1,7 @@
 import Button from '../common/Button';
 import Input from '../common/Input';
 
+// Collect the menu fields needed to create a food item.
 function FoodForm({ categories = [], onSubmit }) {
   return (
     <form className="food-form" onSubmit={onSubmit}>

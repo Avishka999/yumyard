@@ -4,6 +4,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Input from '../components/common/Input';
 import useAuth from '../hooks/useAuth';
 
+// Authenticate an existing customer and return them to the requested page.
 function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();

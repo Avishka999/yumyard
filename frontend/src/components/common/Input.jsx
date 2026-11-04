@@ -1,3 +1,4 @@
+// Reusable labeled input with inline validation feedback.
 function Input({ label, id, error, ...props }) {
   return (
     <label className="form-field" htmlFor={id}>

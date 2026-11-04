@@ -1,3 +1,4 @@
+// Display one category and its active/inactive status.
 function CategoryItem({ category }) {
   return (
     <li className="category-item">

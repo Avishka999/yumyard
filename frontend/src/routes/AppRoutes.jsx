@@ -20,6 +20,7 @@ import RegisterPage from '../pages/RegisterPage';
 import AdminRoute from './AdminRoute';
 import ProtectedRoute from './ProtectedRoute';
 
+// Define customer, protected customer, and admin route groups.
 function AppRoutes() {
   return (
     <Routes>

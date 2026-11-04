@@ -26,6 +26,7 @@ const categoryDetails = {
   },
 };
 
+// Display active categories that contain customer-visible menu items.
 function CategoriesPage() {
   const [categories, setCategories] = useState([]);
   const [foods, setFoods] = useState([]);

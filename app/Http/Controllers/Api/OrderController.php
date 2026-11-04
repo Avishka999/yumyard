@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+    // Return only the authenticated customer's order history.
     public function index(Request $request): JsonResponse
     {
         return response()->json(
@@ -18,6 +19,7 @@ class OrderController extends Controller
         );
     }
 
+    // Validate cart data, calculate trusted prices, and save one order atomically.
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -64,6 +66,7 @@ class OrderController extends Controller
         return response()->json($order, 201);
     }
 
+    // Return one order only when it belongs to the authenticated customer.
     public function show(Request $request, string $id): JsonResponse
     {
         return response()->json(

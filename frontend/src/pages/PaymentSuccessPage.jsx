@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// Confirm successful order creation and offer the next customer actions.
 function PaymentSuccessPage() {
   return (
     <main className="success-page">

@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 import useAuth from '../../hooks/useAuth';
 
+// Render customer navigation, cart count, and account actions.
 function Navigation() {
   const { cart } = useCart();
   const { isAuthenticated, user, logout } = useAuth();

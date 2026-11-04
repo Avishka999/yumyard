@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import AuthContext from '../context/AuthContextValue';
 
+// Read authentication state while enforcing provider usage.
 function useAuth() {
   const context = useContext(AuthContext);
 

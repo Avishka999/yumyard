@@ -4,18 +4,19 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    // Get all categories
-    public function index()
+    // Return categories for the public browse page.
+    public function index(): JsonResponse
     {
         return response()->json(Category::all(), 200);
     }
 
-    // Create new category
-    public function store(Request $request)
+    // Add a category from the protected admin interface.
+    public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -29,16 +30,16 @@ class CategoryController extends Controller
         return response()->json($category, 201);
     }
 
-    // Get one category
-    public function show(string $id)
+    // Return one category for detail or admin views.
+    public function show(string $id): JsonResponse
     {
         $category = Category::findOrFail($id);
 
         return response()->json($category, 200);
     }
 
-    // Update a category
-    public function update(Request $request, string $id)
+    // Update validated category fields.
+    public function update(Request $request, string $id): JsonResponse
     {
         $category = Category::findOrFail($id);
 
@@ -54,8 +55,8 @@ class CategoryController extends Controller
         return response()->json($category, 200);
     }
 
-    // Delete a category
-    public function destroy(string $id)
+    // Delete a category selected by an administrator.
+    public function destroy(string $id): JsonResponse
     {
         $category = Category::findOrFail($id);
 

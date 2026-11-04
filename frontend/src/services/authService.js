@@ -1,5 +1,6 @@
 import api from './api';
 
+// Send credentials to Laravel and persist the returned token.
 export async function login(credentials) {
   const response = await api.post('/login', credentials);
 
@@ -10,6 +11,7 @@ export async function login(credentials) {
   return response.data;
 }
 
+// Create an account and sign the new user in immediately.
 export async function register(userData) {
   const response = await api.post('/register', userData);
 
@@ -20,6 +22,7 @@ export async function register(userData) {
   return response.data;
 }
 
+// Revoke the current token and always clear local session state.
 export async function logout() {
   try {
     const response = await api.post('/logout');

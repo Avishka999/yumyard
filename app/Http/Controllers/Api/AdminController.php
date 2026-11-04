@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    // Aggregate the figures displayed on the admin dashboard.
     public function dashboard(): JsonResponse
     {
         return response()->json([
@@ -24,11 +25,13 @@ class AdminController extends Controller
         ]);
     }
 
+    // Return orders with their customer and line-item details.
     public function orders(): JsonResponse
     {
         return response()->json(Order::with('user', 'items.food')->latest()->get());
     }
 
+    // Validate and apply an administrator's order status update.
     public function updateOrderStatus(Request $request, string $id): JsonResponse
     {
         $order = Order::findOrFail($id);

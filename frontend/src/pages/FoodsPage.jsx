@@ -5,6 +5,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Loading from '../components/common/Loading';
 import { getFoods } from '../services/foodService';
 
+// Load, search, filter, and display the complete customer menu.
 function FoodsPage() {
   const [searchParams] = useSearchParams();
   const location = useLocation();

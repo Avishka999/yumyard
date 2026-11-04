@@ -6,6 +6,7 @@ import Loading from '../components/common/Loading';
 import useCart from '../hooks/useCart';
 import { getFood } from '../services/foodService';
 
+// Show one food item and add the selected quantity to the cart.
 function FoodDetailsPage() {
   const { foodId } = useParams();
   const navigate = useNavigate();

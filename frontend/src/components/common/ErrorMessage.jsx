@@ -1,3 +1,4 @@
+// Render an accessible error only when a request or validation failed.
 function ErrorMessage({ message }) {
   if (!message) {
     return null;

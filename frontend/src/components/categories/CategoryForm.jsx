@@ -7,6 +7,7 @@ const initialFormState = {
   description: '',
 };
 
+// Collect validated category data for the admin page.
 function CategoryForm({ onSubmit, submitting = false }) {
   const [formData, setFormData] = useState(initialFormState);
   const [validationError, setValidationError] = useState('');

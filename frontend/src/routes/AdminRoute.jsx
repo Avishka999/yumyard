@@ -1,6 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
+// Allow only authenticated administrator users into the admin area.
 function AdminRoute() {
   const { user } = useAuth();
 

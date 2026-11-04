@@ -4,6 +4,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Loading from '../components/common/Loading';
 import { getDashboard } from '../services/adminService';
 
+// Show operational totals returned by the admin dashboard API.
 function AdminDashboardPage() {
   const [dashboard, setDashboard] = useState(null);
   const [error, setError] = useState('');

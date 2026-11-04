@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
+// Shared admin shell containing the sidebar and page outlet.
 function AdminLayout() {
   return (
     <div className="admin-layout">
